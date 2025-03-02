@@ -22,4 +22,6 @@ from debug_toolbar.toolbar import debug_toolbar_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/', include('posts.urls')),
+#Lab 8 - listing 4 tu też usuwamy przecinek nadmiarowy
+    path('api/', include('posts.api_urls'))
 ] + debug_toolbar_urls()
