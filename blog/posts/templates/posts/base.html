@@ -1,0 +1,20 @@
+{% comment %} Lab 6 - listing 7 {% endcomment %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <div id="header" >
+            Pierwsza aplikacja Django
+        </div>
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div id="sidebar">
+            <p>Panel boczny</p>
+        </div>
+    </body>
+</html>

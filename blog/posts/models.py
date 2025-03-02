@@ -12,8 +12,9 @@ class Topic(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
  #Lab5 - przeciązanie operatorów
+ #Lab6 - zmodyfikowanie widoku
     def __str__(self):
-        return self.name
+        return f"Topic : {self.name}, dodany {self.created}, w kategorii {self.category.name}." 
     
 class Post(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
