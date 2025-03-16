@@ -36,3 +36,18 @@ class TopicModelSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'created', 'category']
         # definicja pola modelu tylko do odczytu
         read_only_fields = ['id']
+        
+
+#Lab 8 - Zad 1
+class CategoryModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ['id', 'name', 'description']
+        read_only_fields = ['id']
+
+
+class PostModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = ['id', 'topic', 'created_at', 'modified_at', 'created_by', 'content']
+        read_only_fields = ['id']
