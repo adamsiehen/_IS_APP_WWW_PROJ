@@ -1,13 +1,13 @@
-#lab6
-from django.urls import path
+from django.urls import path, include
+from . import api_views
 
-from . import views
-
+# pamiętaj, że te reguły, mimo, że bardzo podobne do zdefiniowanych w poprzednich
+# zadaniach dotyczą endpointów dla REST API, a nie widoków dla szablonów HTML
 urlpatterns = [
-    path("welcome", views.welcome_view),
-    path("topics", views.topic_list),
-#Lab6 - listing 13
-    path("topic/<int:id>", views.topic_detail),
-    path("categories", views.category_list),
-    path("category/<int:id>", views.category_detail),
+    path('topics/', api_views.topic_list),
+    path('topics/<int:pk>/', api_views.topic_detail),
+    path('categories/', api_views.category_list),
+    path('categories/<int:pk>/', api_views.category_detail),
+    path('posts/', api_views.post_list),
+    path('posts/<int:pk>/', api_views.post_detail),
 ]
